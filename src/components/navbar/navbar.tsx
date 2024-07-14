@@ -55,6 +55,13 @@ export default function Navbar(props : Props){
                     <div style={{position:'relative'}}>
                         {/* 입력창 */}
                         <SearchBox searchValue={city} onChange={(e)=>handleInputChange(e.target.value)} onSubmit={handleSubmitSearch} />
+                        {
+                            error && (
+                                <p style={{color:'red'}}>
+                                    {error}
+                                </p>
+                            )
+                        }
                     </div>
                 </section>
             </div>
@@ -64,3 +71,15 @@ export default function Navbar(props : Props){
 
 // 리액트 아이콘 (글자)
 // npm install react-icons --save
+
+
+// chatGPT API 사용법
+// npm install openai
+// chatGPT API 사이트 로그인
+// 상단 Dashboard -> API Keys 로 접속
+// Create new secret key
+// Name 입력 후 생성
+// Save your key 페이지에서 Secret Key 백업!!!
+// 우측 상단의 Setting 에서 Billing 접속하여 잔여요금확인
+// add payment details 에서 카드 등록하고 충전 (자동충전 체크박스 해제)
+// (첫카드 등록시 5달러 제공)
